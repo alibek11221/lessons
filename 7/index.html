@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 90%;
+            max-width: 1320px;
+            margin-inline: auto;
+        }
+        .nav-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav{
+            display: flex;
+            list-style: none;
+            color: #4C4244;
+            font-family: Nunito;
+            font-size: max(11px, 1.4vw);
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            gap: 0 2em;
+        }
+        .nav > li {
+            position: relative;
+        }
+        .nav > li:not(:last-child)::after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: #4C4244;  
+            top:0;
+            right: -1em;
+        }
+        .nav__logo{
+            max-width: 238px;
+            width: 16.5vw;
+            min-width: 118px;
+        }
+        .nav-wrapper--mobile{
+            display: none;
+        }
+        @media screen and (max-width: 360px) {
+            .nav-wrapper--mobile{
+                display: flex;
+                justify-content: space-between;
+
+            }  
+            .burger__line{
+                width: 10px;
+                height: 3px;
+                background-color: #4C4244;
+                margin-block: 10px;
+            }
+            .nav-wrapper{
+                display: none;
+            }
+            .nav--mobile{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                background-color: #fff;
+                height: 100vh;
+                transition: all 1s;
+            }
+        }
+        /*
+        px - пиксели
+        % - процент от родительского контейнер
+        em - 1 * font-size
+        vw - 1 доля от ширины всего экрана
+        vh - 1 доля от высоты всего экрана 
+        1 rem - 1 * global font-size
+        */
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav-wrapper">
+            <ul class="nav">
+                <li>О мире</li>
+                <li>экосистема</li>
+                <li>Радетели</li>
+            </ul>
+            <a href="index.html">
+                <img class="nav__logo" src="menu.svg" alt="">
+            </a>
+            <ul class="nav">
+                <li>команда</li>
+                <li>документы</li>
+                <li>новости</li>
+            </ul>
+        </div>
+        
+        
+
+        <div class="nav-wrapper--mobile">
+            <img src="menu.svg" alt="">
+            <div class="burger">
+                <div class="burger__line"></div>
+                <div class="burger__line"></div>
+                <div class="burger__line"></div>
+            </div>
+            <ul class="nav--mobile">
+                <li>О мире</li>
+                <li>экосистема</li>
+                <li>Радетели</li>
+                <li>команда</li>
+                <li>документы</li>
+                <li>новости</li>
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>
